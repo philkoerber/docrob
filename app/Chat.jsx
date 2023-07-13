@@ -18,8 +18,8 @@ const Chat = () => {
             alt={chat.sender}
           />
           <div
-            className={`border border-black rounded-sm w-[90%] p-4 bg-opacity-30 ${
-              chat.sender === 'user' ? 'bg-gray-300' : 'bg-gray-200'
+            className={`border border-black rounded-sm w-[90%] p-4 backdrop-blur-sm bg-opacity-100 ${
+              chat.sender === 'user' ? 'bg-gray-200' : 'bg-transparent'
             }`}
           >
             {chat.message}

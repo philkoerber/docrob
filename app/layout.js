@@ -1,3 +1,4 @@
+import Footer from './Footer'
 import Header from './Header'
 import './globals.css'
 import { Inter } from 'next/font/google'
@@ -16,10 +17,10 @@ export default function RootLayout({ children }) {
       <body
         className={inter.className}>
         <Header />
-        <div className='mx-auto max-w-[720px]'>
+        <div className='mx-auto max-w-[720px] my-12'>
           {children}
         </div>
-        
+        <Footer/>
       </body>
     </html>
   )
