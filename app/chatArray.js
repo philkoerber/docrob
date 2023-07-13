@@ -1,0 +1,8 @@
+export const chatArray = [
+  { sender: 'user', message: 'Hi, how are you?' },
+  { sender: 'bot', message: "Hello! I'm doing well, thank you. How can I assist you today?" },
+  { sender: 'user', message: "I'm looking for a recipe for chocolate cake." },
+  { sender: 'bot', message: "Sure, I can help with that. Here's a simple recipe for you:\n\nIngredients:\n- 2 cups all-purpose flour\n- 1 3/4 cups granulated sugar\n- 3/4 cup unsweetened cocoa powder\n- 1 1/2 teaspoons baking powder\n- 1 1/2 teaspoons baking soda\n- 1 teaspoon salt\n- 2 large eggs\n- 1 cup milk\n- 1/2 cup vegetable oil\n- 2 teaspoons vanilla extract\n\nInstructions:\n1. Preheat your oven to 350°F (175°C).\n2. Grease and flour two 9-inch round cake pans.\n3. In a large mixing bowl, sift together the flour, sugar, cocoa powder, baking powder, baking soda, and salt.\n4. Add the eggs, milk, vegetable oil, and vanilla extract to the dry ingredients. Mix well until the batter is smooth and well combined.\n5. Divide the batter equally between the prepared cake pans.\n6. Bake in the preheated oven for 30 to 35 minutes, or until a toothpick inserted into the center comes out clean.\n7. Remove the cakes from the oven and let them cool in the pans for about 10 minutes. Then, transfer them to a wire rack to cool completely." },
+  { sender: 'user', message: 'Thank you! I will give it a try.' },
+  { sender: 'bot', message: 'You\'re welcome! If you have any more questions, feel free to ask. Happy baking!' },
+];

@@ -5,7 +5,7 @@ const Header = () => {
     <header className="bg-transparent border-b-2 border-black">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         <div className="flex items-center">
-          {/* <img src="" alt="DOCROB Logo" className="h-8 mr-2" /> */}
+          <img src="docrob.svg" alt="Logo" className="h-12 mr-2" />
           <a href="#" className="text-2xl font-bold text-black hover:text-gray-100">DOC.ROB</a>
         </div>
         <nav>
