@@ -1,0 +1,27 @@
+import React from 'react';
+
+const Header = () => {
+  return (
+    <header className="bg-transparent border-b-2 border-black">
+      <div className="container mx-auto flex items-center justify-between py-4 px-6">
+        <div className="flex items-center">
+          {/* <img src="" alt="DOCROB Logo" className="h-8 mr-2" /> */}
+          <a href="#" className="text-2xl font-bold text-black hover:text-gray-100">DOC.ROB</a>
+        </div>
+        <nav>
+          <ul className="flex space-x-8">
+            <li>
+              <a href="#" className="text-black hover:text-gray-100">Documentation</a>
+            </li>
+            <li>
+              <a href="#" className="text-black hover:text-gray-100">Previous Chats</a>
+            </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
