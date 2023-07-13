@@ -1,8 +1,27 @@
 import React from 'react';
 import { chatArray } from './chatArray';
 
+async function query(data) {
+    const response = await fetch(
+        "https://flowise-ph0q.onrender.com/api/v1/prediction/d9a8839e-b2a6-4dbb-85ad-6a866509341a",
+        {
+            headers: { Authorization: "Bearer " + process.env.FLOWISE_KEY },
+            method: "POST",
+            body: data
+        }
+    );
+  
+  console.log(response)
+    return response;
+}
 
-const Chat = () => {
+query({"question": "Hey, how are you?"}).then((response) => {
+    console.log(response);
+});
+
+
+const Chat = async () => {
+
   return (
     <div className="">
       {chatArray.map((chat, index) => (
