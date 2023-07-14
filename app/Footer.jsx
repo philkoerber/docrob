@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="backdrop-blur-sm border-t-[3px] border-black fixed bottom-0 right-0 left-0 z-10 p-2">
+    <footer className="backdrop-blur-sm border-t-2 border-black fixed bottom-0 right-0 left-0 z-10 p-2">
       <div className="flex justify-center items-center">
         <textarea
           id="text_input"
