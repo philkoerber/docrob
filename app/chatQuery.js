@@ -1,5 +1,3 @@
-import Chat from './Chat'
-
 async function chatQuery(data) {
   
     console.log("calling flowise...")
@@ -25,12 +23,4 @@ async function chatQuery(data) {
     
 }
 
-export default function Home() {
-  
-
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-10">
-      <Chat />
-    </main>
-  )
-}
+export default chatQuery;

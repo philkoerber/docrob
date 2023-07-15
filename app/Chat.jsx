@@ -1,24 +1,38 @@
-"use client"
 
 import React from 'react';
-import { chatArray } from './chatArray';
-import { useState } from 'react';
 
-import socketIOClient from 'socket.io-client'
+async function chatQuery(data) {
+  
+    console.log("calling flowise...")
+    const response = await fetch(
+        process.env.FLOWISE_URI,
+      {
+        headers: {
+          "Authorization": "Bearer " + process.env.FLOWISE_KEY,
+          "Accept": "application/json",
+          "Content-Type": 'application/json'},
+            method: "POST",
+            body: JSON.stringify(data)
+        }
+  );
+  try {
+    const result = await response.json();
+    return result;
+  }
+  catch (e) {
+    console.log("hey, error in the chatQuery: " + e)
+    return null
+  }
+    
+}
 
 const Chat = () => {
 
-  const [socketId, setSocketId] = useState("")
-
-  const socket = socketIOClient("https://flowise-ph0q.onrender.com/") //flowise url
-
-  socket.on('connect', () => {
-  setSocketId(socket.id)
-});
-
+  const chatHistory = []
+  
   return (
     <div className="">
-      {chatArray.map((chat, index) => (
+      {chatHistory.map((chat, index) => (
         <div
           key={index}
           className={`mb-4 flex items-center ${
