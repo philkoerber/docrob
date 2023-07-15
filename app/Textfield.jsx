@@ -1,10 +1,15 @@
 "use client"
 
 import React, { useState } from 'react';
+import useDocrobStore from './useDocrobStore';
 
 function Textfield(props) {
   const [inputText, setInputText] = useState(''); // State for input text
+
   const [isDisabled, setIsDisabled] = useState(false); // State to control button disabled state
+
+  const { chatHistory, addMessage } = useDocrobStore();
+
 
   // Handle input text change
   const handleChange = (e) => {
@@ -15,10 +20,11 @@ function Textfield(props) {
   const handleSendMessage = () => {
     // Perform any actions you need when sending the message
     // For example, you can access the inputText state here
-    console.log('Sending message:', inputText);
-
+    console.log(inputText);
+    addMessage({sender: "user", message: inputText});
     // Clear the input field
     setInputText('');
+
   };
 
   return (
