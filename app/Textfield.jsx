@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import useDocrobStore from './useDocrobStore';
 
+import { MdSend } from "react-icons/md";
+
 function Textfield(props) {
   const [inputText, setInputText] = useState(''); // State for input text
 
@@ -53,9 +55,9 @@ function Textfield(props) {
         <button
           onClick={handleSendMessage}
           disabled={isDisabled}
-          className="ml-2 bg-blue-500 hover:bg-blue-700 disabled:opacity-0 text-white font-bold py-2 px-4 rounded"
+          className="ml-2 bg-blue-500 text-3xl hover:bg-blue-700 disabled:opacity-0 text-white font-bold py-2 px-4 rounded"
         >
-          Send
+          <MdSend/>
         </button>
       </div>
     </div>
