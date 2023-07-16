@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import useDocrobStore from './useDocrobStore';
 
 function Textfield(props) {
@@ -18,14 +18,23 @@ function Textfield(props) {
 
   // Handle sending message
   const handleSendMessage = () => {
+    if(!isDisabled){
     // Perform any actions you need when sending the message
-    // For example, you can access the inputText state here
     console.log(inputText);
     addMessage({sender: "user", message: inputText});
     // Clear the input field
-    setInputText('');
+    setInputText('');}
 
   };
+
+  useEffect(() => {
+    if (chatHistory[chatHistory.length - 1].sender === "user") {
+      setIsDisabled(true)
+    }
+    else {
+      setIsDisabled(false)
+    }
+  },[chatHistory])
 
   return (
     <div>
@@ -42,12 +51,11 @@ function Textfield(props) {
               handleSendMessage();
             }
           }}
-          disabled={isDisabled}
         ></textarea>
         <button
           onClick={handleSendMessage}
           disabled={isDisabled}
-          className="ml-2 bg-blue-500 hover:bg-blue-700 disabled:hidden text-white font-bold py-2 px-4 rounded"
+          className="ml-2 bg-blue-500 hover:bg-blue-700 disabled:opacity-0 text-white font-bold py-2 px-4 rounded"
         >
           Send
         </button>
