@@ -20,11 +20,9 @@ function Textfield(props) {
   const handleSendMessage = () => {
     if(!isDisabled){
     // Perform any actions you need when sending the message
-    console.log(inputText);
     addMessage({sender: "user", message: inputText});
     // Clear the input field
     setInputText('');}
-
   };
 
   useEffect(() => {
