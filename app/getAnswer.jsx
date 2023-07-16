@@ -5,7 +5,7 @@ async function getAnswer({question, config}) {
       {
           "question": question,
           "overrideConfig": {
-      "memoryKey": config.MEMORY_KEY
+          "memoryKey": config.MEMORY_KEY
   }
           }
     )

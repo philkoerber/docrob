@@ -10,11 +10,17 @@ const scrollToBottom = () => {window.scrollTo({
     });}
 
 
-const Chat = ({config}) => {
+const Chat = ({ config }) => {
 
-  const { chatHistory, addMessage } = useDocrobStore()
+  const { chatHistory, addMessage, memoryKey } = useDocrobStore()
+
   
   useEffect(() => {
+
+    if (!config.MEMORY_KEY) {
+      console.log("assigning memory key.....")
+      config.MEMORY_KEY = memoryKey
+    }
 
     scrollToBottom();
     if (chatHistory[chatHistory.length - 1].sender === "user") {
