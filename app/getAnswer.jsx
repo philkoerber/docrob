@@ -1,7 +1,14 @@
 
 async function getAnswer({question, config}) {
-
-
+  console.log(question)
+  const body = JSON.stringify(
+      {
+          "question": question,
+          "overrideConfig": {
+      "memoryKey": config.MEMORY_KEY
+  }
+          }
+    )
   
     console.log("calling flowise...", config.FLOWISE_URI)
     const response = await fetch(
@@ -12,7 +19,7 @@ async function getAnswer({question, config}) {
           "Accept": "application/json",
           "Content-Type": 'application/json'},
             method: "POST",
-            body: JSON.stringify(question)
+        body: body
         }
   );
   try {

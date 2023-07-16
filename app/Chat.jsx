@@ -4,24 +4,31 @@ import React, { useEffect } from 'react';
 import useDocrobStore from './useDocrobStore';
 import getAnswer from './getAnswer';
 
+const scrollToBottom = () => {window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth',
+    });}
+
 
 const Chat = ({config}) => {
 
   const { chatHistory, addMessage } = useDocrobStore()
   
   useEffect(() => {
+
+    scrollToBottom();
     if (chatHistory[chatHistory.length - 1].sender === "user") {
 
       const fetchAnswer = async () => {
         const data = await getAnswer({
-          question: { "question": chatHistory[chatHistory.length - 1].message },
+          question: chatHistory[chatHistory.length - 1].message,
           config: config}
           )
         return data
       }
 
       fetchAnswer().then((result) => {
-        addMessage({ sender: "bot", message: result })
+        addMessage({ sender: "bot", message: result });
       })
     }
     else {
@@ -30,7 +37,7 @@ const Chat = ({config}) => {
   },[chatHistory])
   
   return (
-    <div className="">
+    <div className="w-full h-full">
       {chatHistory.map((chat, index) => (
         <div
           key={index}

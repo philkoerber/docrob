@@ -4,8 +4,9 @@ A more helpful bot for development then just ChatGPT.
 TODO:
 
 asap
-Integrate FlowiseAI Api 💪
-Setup API calls 💪
+Integrate FlowiseAI Api ✅
+Setup API calls ✅
+styling of chat 💪
 
 later
 OAUTH for saving chats and 💪
