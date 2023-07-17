@@ -6,12 +6,12 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between py-2 px-6">
         <div className="flex items-center">
           <img src="docrob.svg" alt="Logo" className="h-12 mr-2" />
-          <a href="#" className="text-3xl font-extrabold text-black hover:text-gray-100">DOC.ROB</a>
+          <a href="/" className="text-3xl font-extrabold text-black hover:text-gray-100">DOC.ROB</a>
         </div>
         <nav>
           <ul className="flex items-center space-x-1">
             <li>
-              <a href="#" className="text-black hover:text-gray-100">previous chats</a>
+              <a href="/yourchats" className="text-black hover:text-gray-100">your chats</a>
             </li>
             <li>
               <img
