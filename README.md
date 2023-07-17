@@ -3,13 +3,8 @@ A more helpful bot for development then just ChatGPT.
 
 TODO:
 
-asap
 Integrate FlowiseAI Api ✅
 Setup API calls ✅
 styling of chat 💪
-
-later
-OAUTH for saving chats and 💪
+OAUTH GITHUB for saving chats and 💪
 input method for putting in your own docs 💪
-
-not that any of this is completly new, but i am learning.

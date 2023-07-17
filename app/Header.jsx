@@ -9,12 +9,16 @@ const Header = () => {
           <a href="#" className="text-3xl font-extrabold text-black hover:text-gray-100">DOC.ROB</a>
         </div>
         <nav>
-          <ul className="flex space-x-8">
+          <ul className="flex items-center space-x-1">
             <li>
-              <a href="#" className="text-black hover:text-gray-100">Documentation</a>
+              <a href="#" className="text-black hover:text-gray-100">previous chats</a>
             </li>
             <li>
-              <a href="#" className="text-black hover:text-gray-100">Previous Chats</a>
+              <img
+            className="h-8 w-8 mr-2"
+            src={"user.svg"}
+            alt={"user"}
+          />
             </li>
             
           </ul>

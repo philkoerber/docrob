@@ -55,7 +55,7 @@ function Textfield(props) {
         <button
           onClick={handleSendMessage}
           disabled={isDisabled}
-          className="ml-2 bg-blue-500 text-3xl hover:bg-blue-700 disabled:opacity-0 text-white font-bold py-2 px-4 rounded"
+          className="ml-2 text-blue-700 hover:text-blue-300 text-3xl disabled:opacity-0 font-bold py-2 px-4 rounded"
         >
           <MdSend/>
         </button>

@@ -6,7 +6,7 @@ export default function Home() {
     FLOWISE_URI: process.env.FLOWISE_URI,
     OPENAI_KEY: process.env.OPENAI_KEY,
     FLOWISE_KEY: process.env.FLOWISE_KEY,
-    MEMORY_KEY: ""
+    MEMORY_KEY: null
   }
 
   return (
