@@ -3,6 +3,8 @@
 import React, { useEffect } from 'react';
 import useDocrobStore from './useDocrobStore';
 import getAnswer from './getAnswer';
+import { motion } from 'framer-motion';
+import Spinner from './Spinner';
 
 const scrollToBottom = () => {window.scrollTo({
       top: document.body.scrollHeight,
@@ -45,8 +47,19 @@ const Chat = ({ config }) => {
   return (
     <div className="w-full h-full">
       {chatHistory.map((chat, index) => (
-        <div
-          key={index}
+        
+        <motion.div
+            key={index}
+            initial={{
+              y: 20,
+              opacity: 0,
+              scale: 0.9
+            }}
+          animate={{
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            }}
           className={`mb-4 flex items-center ${
             chat.sender === 'user' ? '' : 'justify-start'
           }`}
@@ -63,8 +76,10 @@ const Chat = ({ config }) => {
           >
             {chat.message}
           </div>
-        </div>
+          </motion.div>
+          
       ))}
+      <Spinner/>
     </div>
   );
 };

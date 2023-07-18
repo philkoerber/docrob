@@ -27,7 +27,7 @@ async function getAnswer({ question, config }) {
     return result;
   } catch (e) {
     console.log("hey, error in the getAnswer: " + e);
-    return null;
+    return "ERROR in receiving answer from FlowiseAPI. Please reload page";
   }
 }
 
