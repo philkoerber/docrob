@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import useDocrobStore from './useDocrobStore';
 import getAnswer from './getAnswer';
 import { motion } from 'framer-motion';
@@ -15,6 +15,7 @@ const scrollToBottom = () => {window.scrollTo({
 const Chat = ({ config }) => {
 
   const { chatHistory, addMessage, memoryKey } = useDocrobStore()
+  const [isPending, setIsPending] = useState(false)
 
   
   useEffect(() => {
@@ -26,7 +27,7 @@ const Chat = ({ config }) => {
 
     scrollToBottom();
     if (chatHistory[chatHistory.length - 1].sender === "user") {
-
+      setIsPending(true);
       const fetchAnswer = async () => {
         const data = await getAnswer({
           question: chatHistory[chatHistory.length - 1].message,
@@ -36,6 +37,7 @@ const Chat = ({ config }) => {
       }
 
       fetchAnswer().then((result) => {
+        setIsPending(false)
         addMessage({ sender: "bot", message: result });
       })
     }
@@ -79,7 +81,14 @@ const Chat = ({ config }) => {
           </motion.div>
           
       ))}
-      <Spinner/>
+      <motion.div
+        initial={{opacity: 0}}
+        animate={isPending ?
+          { opacity: 1 } :
+          {opacity: 0}}>
+          <Spinner/>
+      </motion.div>
+      
     </div>
   );
 };

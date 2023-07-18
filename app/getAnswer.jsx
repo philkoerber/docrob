@@ -12,22 +12,26 @@ async function getAnswer({ question, config }) {
   
   console.log("calling flowise...", FLOWISE_URI);
   
-  const response = await fetch(FLOWISE_URI, {
-    headers: {
-      "Authorization": "Bearer " + FLOWISE_KEY,
-      "Accept": "application/json",
-      "Content-Type": 'application/json'
-    },
-    method: "POST",
-    body: body
-  });
-  
   try {
+    const response = await fetch(FLOWISE_URI, {
+      headers: {
+        "Authorization": "Bearer " + FLOWISE_KEY,
+        "Accept": "application/json",
+        "Content-Type": 'application/json'
+      },
+      method: "POST",
+      body: body
+    });
+
+    if (!response.ok) {
+      return('ERROR in receiving answer from FlowiseAPI. Please reload the page.');
+    }
+
     const result = await response.json();
     return result;
   } catch (e) {
-    console.log("hey, error in the getAnswer: " + e);
-    return "ERROR in receiving answer from FlowiseAPI. Please reload page";
+    console.log("Error in getAnswer:", e);
+    return "ERROR in receiving answer from FlowiseAPI. Please reload the page.";
   }
 }
 
