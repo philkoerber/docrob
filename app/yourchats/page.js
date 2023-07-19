@@ -1,13 +1,23 @@
 import React from 'react';
-import {cookies} from "next/headers"
+import { cookies } from "next/headers"
+import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import { getServerSession } from 'next-auth';
+import { options } from '../api/auth/[...nextauth]/options';
 
-function YourChats(props) {
-    console.log({cookies});
-    return (
-        <div className='w-full flex justify-center items-center mt-20'>
-            your chats...
-        </div>
-    );
+async function YourChats(props) {
+  const supabase = createServerComponentClient({ cookies })
+  const session = await getServerSession(options)
+  console.log(session)
+    
+  return (
+    <div>
+      your chats
+    </div>
+  )
+  
+  
+    
+    
 }
 
 export default YourChats;

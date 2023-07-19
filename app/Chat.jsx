@@ -5,6 +5,7 @@ import useDocrobStore from './useDocrobStore';
 import getAnswer from './getAnswer';
 import { motion } from 'framer-motion';
 import Spinner from './Spinner';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 const scrollToBottom = () => {window.scrollTo({
       top: document.body.scrollHeight,
@@ -76,7 +77,7 @@ const Chat = ({ config }) => {
               chat.sender === 'user' ? 'bg-gray-50' : 'bg-transparent'
             }`}
           >
-            {chat.message}
+            <ReactMarkdown>{chat.message}</ReactMarkdown>
           </div>
           </motion.div>
           
@@ -84,8 +85,8 @@ const Chat = ({ config }) => {
       <motion.div
         initial={{opacity: 0}}
         animate={isPending ?
-          { opacity: 1 } :
-          {opacity: 0}}>
+          { opacity: 1, transition: {duration: 0.5}} :
+          {opacity: 0, transition: {duration: 0}}}>
           <Spinner/>
       </motion.div>
       

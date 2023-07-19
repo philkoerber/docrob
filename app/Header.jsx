@@ -9,7 +9,7 @@ const Header = () => {
           <a href="/" className="text-3xl font-extrabold text-black hover:text-gray-100">DOC.ROB</a>
         </div>
         <nav>
-          <ul className="flex items-center space-x-1">
+          {/* <ul className="flex items-center space-x-1">
             <li>
               <a href="/yourchats" className="text-black hover:text-gray-100">your chats</a>
             </li>
@@ -21,7 +21,7 @@ const Header = () => {
           />
             </li>
             
-          </ul>
+          </ul> */}
         </nav>
       </div>
     </header>

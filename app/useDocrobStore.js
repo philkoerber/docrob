@@ -1,7 +1,7 @@
 import {create} from 'zustand';
 
 const generateRandomKey = () => {
-  const length = 32;
+  const length = 64;
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let result = '';
   for (let i = 0; i < length; i++) {
