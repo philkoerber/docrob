@@ -1,6 +1,8 @@
 import React from 'react';
+import {cookies} from "next/headers"
 
-function page(props) {
+function YourChats(props) {
+    console.log({cookies});
     return (
         <div className='w-full flex justify-center items-center mt-20'>
             your chats...
@@ -8,4 +10,4 @@ function page(props) {
     );
 }
 
-export default page;
+export default YourChats;
