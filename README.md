@@ -7,6 +7,7 @@ TODO:
 
 Integrate FlowiseAI Api ✅
 Setup API calls ✅
-styling of chat 💪
+
+better styling of chat, especially the markdown 💪
 OAUTH GITHUB for saving chats and 💪
 input method for putting in your own docs 💪
