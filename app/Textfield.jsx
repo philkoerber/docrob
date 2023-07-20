@@ -41,7 +41,7 @@ function Textfield(props) {
       <div className="flex justify-center items-center">
         <textarea
           id="text_input"
-          className="bg-gray-50 text-gray-900 text-sm rounded block w-full max-w-[560px] p-2.5 resize-y overflow-auto"
+          className="bg-gray-50 text-gray-900 text-sm rounded block w-full max-w-[560px] p-2.5 resize-none overflow-hidden"
           placeholder="Ask something about ReactJS"
           value={inputText}
           onChange={handleChange}
