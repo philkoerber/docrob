@@ -28,7 +28,7 @@ function Textfield(props) {
   };
 
   useEffect(() => {
-    if (chatHistory[chatHistory.length - 1].sender === "user") {
+    if (chatHistory[chatHistory && chatHistory.length - 1]?.sender === "user") {
       setIsDisabled(true)
     }
     else {

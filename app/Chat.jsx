@@ -6,6 +6,7 @@ import getAnswer from './getAnswer';
 import { motion } from 'framer-motion';
 import Spinner from './Spinner';
 import MarkdownParent from './MarkdownParent';
+import { randomGreeting } from './randomGreeting';
 
 const scrollToBottom = () => {window.scrollTo({
       top: document.body.scrollHeight,
@@ -21,7 +22,12 @@ const Chat = ({ config }) => {
   
   useEffect(() => {
 
-    if (!config.MEMORY_KEY) {
+    if (chatHistory.length === 0) {
+      addMessage({sender: "bot", message: randomGreeting})
+    }
+
+    else {
+      if (!config.MEMORY_KEY) {
       console.log("assigning memory key.....")
       config.MEMORY_KEY = memoryKey
     }
@@ -43,8 +49,11 @@ const Chat = ({ config }) => {
       })
     }
     else {
-      
+      //
     }
+    }
+
+    
   },[chatHistory])
   
   return (
